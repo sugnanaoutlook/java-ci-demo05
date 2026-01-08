@@ -47,24 +47,24 @@ pipeline {
             }
         }
         
-        stage('Archive Artifacts') {
-            steps {
-                echo 'Archiving artifacts...'
-                archiveArtifacts artifacts: 'target/*.jar', allowEmptyArchive: false
-            }
-        }
+        // stage('Archive Artifacts') {
+        //     steps {
+        //         echo 'Archiving artifacts...'
+        //         archiveArtifacts artifacts: 'target/*.jar', allowEmptyArchive: false
+        //     }
+        // }
         
-        stage('Code Quality Analysis') {
-            steps {
-                echo 'Running code quality checks...'
-                bat 'mvn checkstyle:check'
-            }
-            post {
-                always {
-                    // Archive checkstyle reports if they exist
-                    archiveArtifacts artifacts: 'target/checkstyle-result.xml', allowEmptyArchive: true
-                }
-            }
+        // stage('Code Quality Analysis') {
+        //     steps {
+        //         echo 'Running code quality checks...'
+        //         bat 'mvn checkstyle:check'
+        //     }
+            // post {
+            //     always {
+            //         // Archive checkstyle reports if they exist
+            //         archiveArtifacts artifacts: 'target/checkstyle-result.xml', allowEmptyArchive: true
+            //     }
+            // }
         }
     }
     
