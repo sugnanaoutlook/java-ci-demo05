@@ -30,14 +30,14 @@ pipeline {
                 echo 'Running tests...'
                 bat 'mvn test'
             }
-            post {
-                always {
-                    // Publish test results
-                    publishTestResults testResultsPattern: 'target/surefire-reports/*.xml'
-                    // Archive test reports
-                    archiveArtifacts artifacts: 'target/surefire-reports/*.xml', allowEmptyArchive: true
-                }
-            }
+            // post {
+            //     always {
+            //         // Publish test results
+            //         publishTestResults testResultsPattern: 'target/surefire-reports/*.xml'
+            //         // Archive test reports
+            //         archiveArtifacts artifacts: 'target/surefire-reports/*.xml', allowEmptyArchive: true
+            //     }
+            // }
         }
         
         stage('Package') {
