@@ -65,7 +65,7 @@ pipeline {
             //         archiveArtifacts artifacts: 'target/checkstyle-result.xml', allowEmptyArchive: true
             //     }
             // }
-        }
+       // }
     }
     
     post {
